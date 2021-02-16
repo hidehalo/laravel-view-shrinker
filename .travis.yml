@@ -1,0 +1,16 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+  - 8.0
+
+sudo: false
+
+install:
+  - composer self-update
+  - composer install --no-interaction --prefer-source
+
+script:
+  - vendor/bin/phpunit --coverage-text

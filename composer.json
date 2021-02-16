@@ -1,0 +1,44 @@
+{
+    "name": "hidehalo/laravel-view-shrinker",
+    "description": "Laravel framework view shrinker",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    },
+    "authors": [
+        {
+            "name": "hidehalo",
+            "email": "tianchen_cc@yeah.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hidehalo\\View\\Compilers\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hidehalo\\View\\Compilers\\Tests\\": "tests"
+        }
+    },
+    "archive": {
+        "exclude": [
+            "tests/",
+            ".gitignore",
+            "*.md",
+            "*.yml",
+            "*.xml"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Hidehalo\\View\\Compilers\\ShrinkCompilerServiceProvider"
+            ]
+        }
+    },
+    "license": "MIT"
+}

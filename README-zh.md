@@ -30,4 +30,4 @@ composer install "hidehalo/laravel-view-shrinker"
 
 ## 证书
 
-该项目依据MIT证书进行开源，更多信息请查看[证书文件](LICENSE.md)。
+该项目依据MIT证书进行开源，更多信息请查看[证书文件](LICENSE)。

@@ -4,6 +4,7 @@
  */
 namespace Hidehalo\View\Compilers;
 
+use Illuminate\View\DynamicComponent;
 use Illuminate\Support\ServiceProvider;
 
 class ShrinkCompilerServiceProvider extends ServiceProvider
@@ -16,9 +17,9 @@ class ShrinkCompilerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('blade.compiler', function () {
-            return new ShrinkCompiler(
-                $this->app['files'], $this->app['config']['view.compiled']
-            );
+            return tap(new ShrinkCompiler($this->app['files'], $this->app['config']['view.compiled']), function ($blade) {
+                $blade->component('dynamic-component', DynamicComponent::class);
+            });
         });
     }
 }

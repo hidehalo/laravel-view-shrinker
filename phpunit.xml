@@ -16,6 +16,5 @@
     <php>
         <ini name="memory_limit" value="2048M"/>
         <ini name="xdebug.mode" value="coverage"/>
-        <env name="XDEBUG_MODE" value="coverage"/>
     </php>
 </phpunit>

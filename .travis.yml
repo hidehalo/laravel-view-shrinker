@@ -13,4 +13,4 @@ install:
   - composer install --no-interaction --prefer-source
 
 script:
-  - vendor/bin/phpunit --coverage-text
+  - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-text

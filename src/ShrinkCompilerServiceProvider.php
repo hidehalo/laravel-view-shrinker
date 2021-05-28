@@ -16,9 +16,9 @@ class ShrinkCompilerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('blade.compiler', function () {
-            return new ShrinkCompiler(
-                $this->app['files'], $this->app['config']['view.compiled']
-            );
+            return tap(new ShrinkCompiler($this->app['files'], $this->app['config']['view.compiled']), function ($blade) {
+                $blade->component('dynamic-component', \Illuminate\View\DynamicComponent::class);
+            });
         });
     }
 }
